@@ -22,7 +22,9 @@ final class Coordinator: CoordinatorProtocol {
     }
     
     func start() {
-        // initial view controller setup
+        // Initial view controller setup
+        let tabBar = TabBarBuilder.build()
+        navigationController = UINavigationController(rootViewController: tabBar)
     }
     
     
