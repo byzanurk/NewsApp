@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 struct SelectedDiscoverViewBuilder {
-    static func build(coordinator: Coordinator) -> UIViewController {
+    static func build(coordinator: Coordinator, category: String) -> UIViewController {
         let service: NetworkRouterProtocol = NetworkRouter()
-        let viewModel = SelectedDiscoverViewModel(service: service)
+        let viewModel = SelectedDiscoverViewModel(service: service, category: category)
         let storyboard = UIStoryboard(name: "SelectedDiscoverViewController", bundle: nil)
         guard let discoverVC = storyboard.instantiateViewController(withIdentifier: "SelectedDiscoverViewController") as? SelectedDiscoverViewController else { return UIViewController()}
         discoverVC.viewModel = viewModel
