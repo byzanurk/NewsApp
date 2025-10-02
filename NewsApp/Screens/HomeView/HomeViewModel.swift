@@ -12,7 +12,7 @@ protocol HomeViewModelProtocol {
 }
 
 protocol HomeViewModelOutput: AnyObject {
-    func showError(message: Error)
+    func showError(message: String)
 }
 
 final class HomeViewModel: HomeViewModelProtocol {

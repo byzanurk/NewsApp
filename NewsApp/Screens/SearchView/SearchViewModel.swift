@@ -12,7 +12,7 @@ protocol SearchViewModelProtocol {
 }
 
 protocol SearchViewModelOutput: AnyObject {
-    func showError(message: Error)
+    func showError(message: String)
 }
 
 

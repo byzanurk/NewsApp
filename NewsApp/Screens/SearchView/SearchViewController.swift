@@ -10,11 +10,17 @@ import UIKit
 final class SearchViewController: UIViewController {
 
     var coordinator: Coordinator!
-    var viewModel: SearchViewModel! // sonra degis
+    var viewModel: SearchViewModelProtocol!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
+    }
+}
 
+extension SearchViewController: SearchViewModelOutput {
+    func showError(message: String) {
+        print("error: \(message)")
     }
 }

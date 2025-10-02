@@ -11,14 +11,19 @@ final class HomeViewController: UIViewController {
     
     // MARK: - Properties
     var coordinator: Coordinator!
-    var viewModel: HomeViewModel! // viewmodele protocol ekledikten sonra degistir homeviewmodelprotocol! diye
+    var viewModel: HomeViewModelProtocol!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel.delegate = self
     }
 
 
 }
 
+extension HomeViewController: HomeViewModelOutput {
+    func showError(message: String) {
+        print("error: \(message)")
+    }
+}
