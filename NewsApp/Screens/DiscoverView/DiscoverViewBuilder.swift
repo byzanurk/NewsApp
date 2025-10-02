@@ -10,8 +10,8 @@ import UIKit
 
 struct DiscoverViewBuilder {
     static func build(coordinator: Coordinator) -> UIViewController {
-        // service
-        let viewModel = DiscoverViewModel()
+        let service: NetworkRouterProtocol = NetworkRouter()
+        let viewModel = DiscoverViewModel(service: service)
         let storyboard = UIStoryboard(name: "DiscoverViewController", bundle: nil)
         guard let discoverVC = storyboard.instantiateViewController(withIdentifier: "DiscoverViewController") as? DiscoverViewController else { return UIViewController() }
         

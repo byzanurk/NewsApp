@@ -7,6 +7,22 @@
 
 import Foundation
 
-final class HomeViewModel {
-    // home view model code
+protocol HomeViewModelProtocol {
+    var delegate: HomeViewModelOutput? { get set }
+}
+
+protocol HomeViewModelOutput: AnyObject {
+    func showError(message: Error)
+}
+
+final class HomeViewModel: HomeViewModelProtocol {
+    
+    weak var delegate: HomeViewModelOutput?
+    private let service: NetworkRouterProtocol
+    
+    init(service: NetworkRouterProtocol) {
+        self.service = service
+    }
+
+    
 }

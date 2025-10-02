@@ -7,6 +7,24 @@
 
 import Foundation
 
-final class SearchViewModel {
-    // search view model code
+protocol SearchViewModelProtocol {
+    var delegate: SearchViewModelOutput? { get set }
+}
+
+protocol SearchViewModelOutput: AnyObject {
+    func showError(message: Error)
+}
+
+
+
+final class SearchViewModel: SearchViewModelProtocol {
+    
+    weak var delegate: SearchViewModelOutput?
+    private let service: NetworkRouterProtocol
+    
+    init(service: NetworkRouterProtocol) {
+        self.service = service
+    }
+
+    
 }

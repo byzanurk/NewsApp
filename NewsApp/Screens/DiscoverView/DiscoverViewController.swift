@@ -12,20 +12,20 @@ final class DiscoverViewController: BaseViewController {
     var coordinator: Coordinator!
     var viewModel: DiscoverViewModel! // sonra degis
     
-    @IBOutlet private weak var categoryCollectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     private let categories = NewsCategory.allCases
     
     override func viewDidLoad() {
         pageTitle = "Discover"
         super.viewDidLoad()
         setupCollectionView()
-        categoryCollectionView.collectionViewLayout = createLayout()
+        collectionView.collectionViewLayout = createLayout()
     }
     
     private func setupCollectionView() {
-        categoryCollectionView.delegate = self
-        categoryCollectionView.dataSource = self
-        categoryCollectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
     }
     
     private func createLayout() -> UICollectionViewCompositionalLayout {
@@ -93,7 +93,7 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell else {
             return UICollectionViewCell()
         }
         let category = categories[indexPath.item]

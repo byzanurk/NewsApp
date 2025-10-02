@@ -7,6 +7,24 @@
 
 import Foundation
 
-final class DiscoverViewModel {
-    // discover view model code
+protocol DiscoverViewModelProtocol {
+    var delegate: DiscoverViewModelOutput? { get set }
+}
+
+protocol DiscoverViewModelOutput: AnyObject {
+    func showError(message: Error)
+    
+}
+
+final class DiscoverViewModel: DiscoverViewModelProtocol {
+    
+    weak var delegate: DiscoverViewModelOutput?
+    private let service: NetworkRouterProtocol
+    
+    init(service: NetworkRouterProtocol) {
+        self.service = service
+    }
+    
+
+    
 }

@@ -8,18 +8,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Discover View Controller-->
+        <!--Selected Discover View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="DiscoverViewController" id="Y6W-OH-hqX" customClass="DiscoverViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectedDiscoverViewController" id="Y6W-OH-hqX" customClass="SelectedDiscoverViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MK7-4w-13d">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hw1-j0-8ZU">
                                 <rect key="frame" x="0.0" y="118" width="393" height="734"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sfg-jp-JuG">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uGp-iH-Abj">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -31,19 +31,19 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MK7-4w-13d" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8FX-5L-Dry"/>
-                            <constraint firstItem="MK7-4w-13d" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="GHa-tc-jSZ"/>
-                            <constraint firstItem="MK7-4w-13d" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="XMm-t9-RZk"/>
-                            <constraint firstAttribute="bottom" secondItem="MK7-4w-13d" secondAttribute="bottom" id="baD-gf-ZpM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Hw1-j0-8ZU" secondAttribute="trailing" id="GmJ-CE-cyf"/>
+                            <constraint firstAttribute="bottom" secondItem="Hw1-j0-8ZU" secondAttribute="bottom" id="NCs-LD-4jF"/>
+                            <constraint firstItem="Hw1-j0-8ZU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nOS-cw-GJl"/>
+                            <constraint firstItem="Hw1-j0-8ZU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="oL1-SN-UI8"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="MK7-4w-13d" id="MKV-l2-jSF"/>
+                        <outlet property="collectionView" destination="Hw1-j0-8ZU" id="rqM-e6-w4k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45.038167938931295" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="125.95419847328243" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
