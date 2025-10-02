@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
 
     var coordinator: Coordinator!
     var viewModel: SearchViewModel! // sonra degis
