@@ -1,0 +1,15 @@
+//
+//  UIViewController+Navigate.swift
+//  NewsApp
+//
+//  Created by Beyza Nur Tekerek on 3.10.2025.
+//
+
+import Foundation
+import UIKit
+
+extension UIViewController {
+    func navigate(to vc: UIViewController, coordinator: Coordinator) {
+        coordinator.eventOccurred(with: vc)
+    }
+}
