@@ -32,14 +32,18 @@ final class TabBarController: UITabBarController {
         let vc1 = HomeViewBuilder.build(coordinator: coordinator)
         let vc2 = DiscoverViewBuilder.build(coordinator: coordinator)
         let vc3 = SearchViewBuilder.build(coordinator: coordinator)
+                
+        let nav1 = UINavigationController(rootViewController: vc1)
+        let nav2 = UINavigationController(rootViewController: vc2)
+        let nav3 = UINavigationController(rootViewController: vc3)
         
-        vc1.tabBarItem.image = UIImage(systemName: "house")
-        vc2.tabBarItem.image = UIImage(systemName: "safari")
-        vc3.tabBarItem.image = UIImage(systemName: "magnifyingglass")
+        nav1.tabBarItem.image = UIImage(systemName: "house")
+        nav2.tabBarItem.image = UIImage(systemName: "safari")
+        nav3.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         
         tabBar.tintColor = .brown
         
-        setViewControllers([vc1, vc2, vc3], animated: true)
+        setViewControllers([nav1, nav2, nav3], animated: true)
         
         selectedIndex = 1
     }
