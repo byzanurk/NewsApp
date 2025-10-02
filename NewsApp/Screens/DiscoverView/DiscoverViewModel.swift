@@ -12,7 +12,7 @@ protocol DiscoverViewModelProtocol {
 }
 
 protocol DiscoverViewModelOutput: AnyObject {
-    func showError(message: Error)
+    func showError(message: String)
     
 }
 

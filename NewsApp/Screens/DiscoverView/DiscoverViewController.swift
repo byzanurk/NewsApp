@@ -10,14 +10,16 @@ import UIKit
 final class DiscoverViewController: BaseViewController {
     
     var coordinator: Coordinator!
-    var viewModel: DiscoverViewModel! // sonra degis
+    var viewModel: DiscoverViewModelProtocol!
+    private let categories = NewsCategory.allCases
     
     @IBOutlet private weak var collectionView: UICollectionView!
-    private let categories = NewsCategory.allCases
+    
     
     override func viewDidLoad() {
         pageTitle = "Discover"
         super.viewDidLoad()
+        viewModel.delegate = self
         setupCollectionView()
         collectionView.collectionViewLayout = createLayout()
     }
@@ -84,7 +86,7 @@ final class DiscoverViewController: BaseViewController {
             return section
         }
     }
-    
+        
 }
 
 extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -102,6 +104,14 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // didselect
+        let category = categories[indexPath.item]
+        let vc = SelectedDiscoverViewBuilder.build(coordinator: self.coordinator, category: category.rawValue)
+        navigate(to: vc, coordinator: coordinator)
+    }
+}
+
+extension DiscoverViewController: DiscoverViewModelOutput {
+    func showError(message: String) {
+        print("error: \(message)")
     }
 }
