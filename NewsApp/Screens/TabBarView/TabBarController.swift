@@ -37,9 +37,11 @@ final class TabBarController: UITabBarController {
         vc2.tabBarItem.image = UIImage(systemName: "safari")
         vc3.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         
-        tabBar.tintColor = .label
+        tabBar.tintColor = .brown
         
         setViewControllers([vc1, vc2, vc3], animated: true)
+        
+        selectedIndex = 1
     }
 
     
