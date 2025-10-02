@@ -22,9 +22,8 @@ final class Coordinator: CoordinatorProtocol {
     }
     
     func start() {
-        // Initial view controller setup
-        let tabBar = TabBarBuilder.build()
-        navigationController = UINavigationController(rootViewController: tabBar)
+        let tabBar = TabBarBuilder.build(coordinator: self)
+        navigationController?.setViewControllers([tabBar], animated: true)
     }
     
     
