@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkRouterProtocol {
-    // alll fetch func
+    func fetchTopHeadlines(category: String, completion: @escaping (Result<NewsResponse, NetworkError>) -> Void)
 }
 
 final class NetworkRouter: NetworkRouterProtocol {
@@ -19,7 +19,19 @@ final class NetworkRouter: NetworkRouterProtocol {
         self.service = service
     }
     
-    // all fetch funcs
+    func fetchTopHeadlines(category: String, completion: @escaping (Result<NewsResponse, NetworkError>) -> Void) {
+        let endpoint = NewsEndpoint.topHeadlines(category: category)
+        
+        service.request(
+            path: endpoint.path,
+            responseType: NewsResponse.self,
+            baseURL: endpoint.baseURL,
+            method: HTTPMethod.get,
+            parameters: endpoint.parameters,
+            completion: completion
+        )
+    }
+
     
     
 }
