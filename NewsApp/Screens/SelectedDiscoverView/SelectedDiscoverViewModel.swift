@@ -42,8 +42,6 @@ final class SelectedDiscoverViewModel: SelectedDiscoverViewModelProtocol {
                 print("error fetching top headlines articles:", error)
             }
         }
-    }
-    
-    
+    } 
     
 }
