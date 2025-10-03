@@ -56,7 +56,7 @@ extension SelectedDiscoverViewController: UICollectionViewDelegate, UICollection
         let article = viewModel.articles[indexPath.item]
         guard let urlString = article.url, let url = URL(string: urlString) else { return }
         let safariVC = SFSafariViewController(url: url)
-        present(safariVC, animated: true, completion: nil)
+        navigate(to: safariVC, coordinator: coordinator)
     }
     
     func collectionView(_ collectionView: UICollectionView,
