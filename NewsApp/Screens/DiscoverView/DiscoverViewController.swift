@@ -15,7 +15,6 @@ final class DiscoverViewController: BaseViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         pageTitle = "Discover"
