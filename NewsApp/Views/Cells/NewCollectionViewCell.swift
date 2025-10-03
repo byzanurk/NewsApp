@@ -19,12 +19,34 @@ class NewCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         contentView.layer.cornerRadius = 8
         contentView.layer.masksToBounds = true
+        contentView.layer.borderWidth = 1.0
+        contentView.layer.borderColor = UIColor.systemGray6.cgColor
+        contentView.backgroundColor = .systemBackground
+        updateBorderColor()
+        
+        authorLabel.numberOfLines = 0
+        authorLabel.lineBreakMode = .byTruncatingTail
+        
+        titleLabel.numberOfLines = 0
+        titleLabel.lineBreakMode = .byWordWrapping
+        
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.15
         layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowRadius = 8
         layer.masksToBounds = false
+        
+        registerForTraitChanges([UITraitUserInterfaceStyle.self]) { (self: Self, previousTraitCollection: UITraitCollection) in
+            self.updateBorderColor()
+        }
+
+    }
+
+    private func updateBorderColor() {
+        contentView.layer.borderColor = UIColor.systemGray5.cgColor
     }
 
     func configure(with article: Article) {
@@ -33,9 +55,11 @@ class NewCollectionViewCell: UICollectionViewCell {
         dateLabel.text = article.publishedAt
         
         if let urlString = article.urlToImage, let url = URL(string: urlString) {
-            imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "photo"))
+            imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "newspaper"))
+            imageView.tintColor = .systemGray5
         } else {
-            imageView.image = UIImage(systemName: "photo")
+            imageView.image = UIImage(systemName: "newspaper")
+            imageView.tintColor = .systemGray5
         }
         
     }

@@ -106,6 +106,7 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let category = categories[indexPath.item]
         let vc = SelectedDiscoverViewBuilder.build(coordinator: self.coordinator, category: category.rawValue)
+        vc.title = category.rawValue
         navigate(to: vc, coordinator: coordinator)
     }
 }

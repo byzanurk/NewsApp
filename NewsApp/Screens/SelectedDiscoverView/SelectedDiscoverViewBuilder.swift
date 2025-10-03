@@ -14,8 +14,11 @@ struct SelectedDiscoverViewBuilder {
         let viewModel = SelectedDiscoverViewModel(service: service, category: category)
         let storyboard = UIStoryboard(name: "SelectedDiscoverViewController", bundle: nil)
         guard let discoverVC = storyboard.instantiateViewController(withIdentifier: "SelectedDiscoverViewController") as? SelectedDiscoverViewController else { return UIViewController()}
+        
         discoverVC.viewModel = viewModel
         discoverVC.coordinator = coordinator
+        discoverVC.title = category
+        
         return discoverVC
     }
 }
