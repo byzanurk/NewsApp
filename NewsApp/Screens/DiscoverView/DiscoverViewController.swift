@@ -17,8 +17,8 @@ final class DiscoverViewController: BaseViewController {
     
     
     override func viewDidLoad() {
-        pageTitle = "Discover"
         super.viewDidLoad()
+        pageTitle = "Discover"
         viewModel.delegate = self
         setupCollectionView()
         collectionView.collectionViewLayout = createLayout()
