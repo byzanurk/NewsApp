@@ -17,6 +17,7 @@ struct HomeViewBuilder {
         
         homeVC.viewModel = viewModel
         homeVC.coordinator = coordinator
+        
         return homeVC
     }
 }
