@@ -52,7 +52,7 @@ final class SearchViewController: BaseViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "NewCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NewCollectionViewCell")
-        
+                
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.estimatedItemSize = .zero
         }
@@ -115,10 +115,25 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
 }
 
 extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count >= 3 {
+            viewModel.searchNews(query: searchText)
+            tabBarController?.tabBar.isHidden = true
+        } else {
+            viewModel.searchResults = []
+            updateEmptyState()
+            collectionView.reloadData()
+            tabBarController?.tabBar.isHidden = false
+        }
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text, !query.isEmpty else { return }
-        viewModel.searchNews(query: query)
         searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        tabBarController?.tabBar.isHidden = false
     }
 }
 
