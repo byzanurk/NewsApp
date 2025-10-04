@@ -55,7 +55,7 @@ class NewCollectionViewCell: UICollectionViewCell {
     func configure(with article: Article) {
         titleLabel.text = article.title
         authorLabel.text = article.author ?? article.source?.name
-        dateLabel.text = article.publishedAt
+        dateLabel.text = article.publishedAt?.toRelativeDateString()
         
         
         imageView.setImageWithLoading(
