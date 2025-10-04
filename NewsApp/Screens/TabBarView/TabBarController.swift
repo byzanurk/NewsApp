@@ -36,12 +36,24 @@ final class TabBarController: UITabBarController {
         let nav1 = UINavigationController(rootViewController: vc1)
         let nav2 = UINavigationController(rootViewController: vc2)
         let nav3 = UINavigationController(rootViewController: vc3)
+
+        vc1.title = nil
+        vc2.title = nil
+        vc3.title = nil
         
-        nav1.tabBarItem.image = UIImage(systemName: "house")
-        nav2.tabBarItem.image = UIImage(systemName: "safari")
-        nav3.tabBarItem.image = UIImage(systemName: "magnifyingglass")
+        nav1.title = nil
+        nav2.title = nil
+        nav3.title = nil
+
+        nav1.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
+        nav2.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "safari"), selectedImage: UIImage(systemName: "safari.fill"))
+        nav3.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
         
-        tabBar.tintColor = .brown
+        nav1.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+        nav2.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+        nav3.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+        
+        tabBar.tintColor = .systemGreen
         
         setViewControllers([nav1, nav2, nav3], animated: true)
         

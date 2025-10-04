@@ -11,7 +11,7 @@ class BaseViewController: UIViewController {
 
     var pageTitle: String = "" {
         didSet {
-            self.title = pageTitle
+            self.navigationItem.title = pageTitle
         }
     }
     
@@ -23,5 +23,6 @@ class BaseViewController: UIViewController {
             .foregroundColor: UIColor.label,
             .font: UIFont.systemFont(ofSize: 17, weight: .semibold)
         ]
+        tabBarItem.title = nil
     }
 }
