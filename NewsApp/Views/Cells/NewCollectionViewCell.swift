@@ -14,9 +14,13 @@ class NewCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var authorLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupCell()
+    }
+    
+    private func setupCell() {
         contentView.layer.cornerRadius = 8
         contentView.layer.masksToBounds = true
         contentView.layer.borderWidth = 1.0
@@ -42,7 +46,6 @@ class NewCollectionViewCell: UICollectionViewCell {
         registerForTraitChanges([UITraitUserInterfaceStyle.self]) { (self: Self, previousTraitCollection: UITraitCollection) in
             self.updateBorderColor()
         }
-
     }
 
     private func updateBorderColor() {
@@ -54,13 +57,11 @@ class NewCollectionViewCell: UICollectionViewCell {
         authorLabel.text = article.author ?? article.source?.name
         dateLabel.text = article.publishedAt
         
-        if let urlString = article.urlToImage, let url = URL(string: urlString) {
-            imageView.kf.setImage(with: url, placeholder: UIImage(systemName: "newspaper"))
-            imageView.tintColor = .systemGray5
-        } else {
-            imageView.image = UIImage(systemName: "newspaper")
-            imageView.tintColor = .systemGray5
-        }
+        
+        imageView.setImageWithLoading(
+            from: article.urlToImage,
+            placeholder: UIImage(systemName: "newspaper")
+        )
         
     }
 }
