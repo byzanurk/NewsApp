@@ -1,3 +1,5 @@
+# News App
+
 ## Screenshots
 
 ### 1. Home
