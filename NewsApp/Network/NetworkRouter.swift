@@ -15,7 +15,7 @@ protocol NetworkRouterProtocol {
 
 final class NetworkRouter: NetworkRouterProtocol {
   
-    let service: NetworkManagerProtocol
+    private let service: NetworkManagerProtocol
     
     init(service: NetworkManagerProtocol = NetworkManager()) {
         self.service = service

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct DiscoverViewBuilder {
-    static func build(coordinator: Coordinator) -> UIViewController {
+    static func build(coordinator: CoordinatorProtocol) -> UIViewController {
         let service: NetworkRouterProtocol = NetworkRouter()
         let viewModel = DiscoverViewModel(service: service)
         let storyboard = UIStoryboard(name: "DiscoverViewController", bundle: nil)

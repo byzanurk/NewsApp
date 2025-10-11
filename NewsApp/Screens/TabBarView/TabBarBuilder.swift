@@ -9,9 +9,8 @@ import Foundation
 import UIKit
 
 final class TabBarBuilder {
-    static func build(coordinator: Coordinator) -> UITabBarController {
+    static func build(coordinator: CoordinatorProtocol) -> UITabBarController {
         let tabBar = TabBarController(coordinator: coordinator)
-        tabBar.coordinator = coordinator
         return tabBar
     }
 }

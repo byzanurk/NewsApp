@@ -9,9 +9,10 @@ import Foundation
 import UIKit
 
 // MARK: CoordinatorProtocol
-protocol CoordinatorProtocol {
-    var navigationController: UINavigationController? { get set }
+protocol CoordinatorProtocol: AnyObject {
     var parentCoordinator: CoordinatorProtocol? { get set }
     func eventOccurred(with viewController: UIViewController)
-    func start()
+    @discardableResult
+    func start() -> UITabBarController
 }
+

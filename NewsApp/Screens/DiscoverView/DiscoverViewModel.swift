@@ -24,7 +24,4 @@ final class DiscoverViewModel: DiscoverViewModelProtocol {
     init(service: NetworkRouterProtocol) {
         self.service = service
     }
-    
-
-    
 }

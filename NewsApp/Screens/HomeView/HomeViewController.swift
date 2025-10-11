@@ -10,19 +10,23 @@ import SafariServices
 
 final class HomeViewController: BaseViewController {
     
-    var coordinator: Coordinator!
+    // MARK: - Properties
+    var coordinator: CoordinatorProtocol!
     var viewModel: HomeViewModelProtocol!
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    // MARK: - Outlets
+    @IBOutlet private weak var collectionView: UICollectionView!
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageTitle = "Home"
+        title = "Home"
         viewModel.delegate = self
         fetchArticles()
         setupCollectionView()
     }
 
+    // MARK: - Setup
     private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -33,13 +37,15 @@ final class HomeViewController: BaseViewController {
         }
     }
     
+    // MARK: - Data
     private func fetchArticles() {
         viewModel.fetchGeneralHeadlines()
     }
 
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+// MARK: - UICollectionViewDataSource
+extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.articles.count
     }
@@ -52,14 +58,20 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.configure(with: article)
         return cell
     }
-    
+}
+
+// MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let article = viewModel.articles[indexPath.row]
         guard let urlString = article.url, let url = URL(string: urlString) else { return }
         let safariVC = SFSafariViewController(url: url)
         navigate(to: safariVC, coordinator: coordinator)
     }
-    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -90,10 +102,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
-
 }
 
-
+// MARK: - HomeViewModelOutput
 extension HomeViewController: HomeViewModelOutput {
     func didUpdateArticles() {
         DispatchQueue.main.async {

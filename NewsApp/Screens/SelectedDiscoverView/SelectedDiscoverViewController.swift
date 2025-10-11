@@ -8,13 +8,16 @@
 import UIKit
 import SafariServices
 
-class SelectedDiscoverViewController: UIViewController {
+final class SelectedDiscoverViewController: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    // MARK: - Properties
     var viewModel: SelectedDiscoverViewModelProtocol!
-    var coordinator: Coordinator!
+    var coordinator: CoordinatorProtocol!
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
@@ -22,6 +25,7 @@ class SelectedDiscoverViewController: UIViewController {
         fetchArticles()
     }
     
+    // MARK: - Setup
     private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -32,13 +36,15 @@ class SelectedDiscoverViewController: UIViewController {
         }
     }
 
+    // MARK: - Data
     private func fetchArticles() {
         viewModel.fetchTopHeadlines()
     }
 
 }
 
-extension SelectedDiscoverViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+// MARK: - UICollectionViewDataSource
+extension SelectedDiscoverViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.articles.count
     }
@@ -51,14 +57,20 @@ extension SelectedDiscoverViewController: UICollectionViewDelegate, UICollection
         cell.configure(with: article)
         return cell
     }
-    
+}
+
+// MARK: - UICollectionViewDelegate
+extension SelectedDiscoverViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let article = viewModel.articles[indexPath.item]
         guard let urlString = article.url, let url = URL(string: urlString) else { return }
         let safariVC = SFSafariViewController(url: url)
         navigate(to: safariVC, coordinator: coordinator)
     }
-    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension SelectedDiscoverViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -89,9 +101,9 @@ extension SelectedDiscoverViewController: UICollectionViewDelegate, UICollection
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
-    
 }
 
+// MARK: - SelectedDiscoverViewModelOutput
 extension SelectedDiscoverViewController: SelectedDiscoverViewModelOutput {
     func didUpdateArticles() {
         DispatchQueue.main.async() {

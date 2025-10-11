@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct SearchViewBuilder {
-    static func build(coordinator: Coordinator) -> UIViewController {
+    static func build(coordinator: CoordinatorProtocol) -> UIViewController {
         let service: NetworkRouterProtocol = NetworkRouter()
         let viewModel = SearchViewModel(service: service)
         let storyboard = UIStoryboard(name: "SearchViewController", bundle: nil)
@@ -20,3 +20,4 @@ struct SearchViewBuilder {
         return searchVC
     }
 }
+

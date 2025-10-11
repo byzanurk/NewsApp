@@ -10,7 +10,7 @@ import SafariServices
 
 final class SearchViewController: BaseViewController {
 
-    var coordinator: Coordinator!
+    var coordinator: CoordinatorProtocol!
     var viewModel: SearchViewModelProtocol!
     
     @IBOutlet private weak var searchBar: UISearchBar!
@@ -21,7 +21,7 @@ final class SearchViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageTitle = "Search"
+        title = "Search"
         viewModel.delegate = self
         setupEmptyState()
         setupSearchBar()
@@ -147,3 +147,4 @@ extension SearchViewController: SearchViewModelOutput {
         print("error: \(message)")
     }
 }
+

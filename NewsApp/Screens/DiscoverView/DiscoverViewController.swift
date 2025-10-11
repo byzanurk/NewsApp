@@ -9,26 +9,31 @@ import UIKit
 
 final class DiscoverViewController: BaseViewController {
     
-    var coordinator: Coordinator!
+    // MARK: - Properties
+    var coordinator: CoordinatorProtocol!
     var viewModel: DiscoverViewModelProtocol!
     private let categories = NewsCategory.allCases
     
+    // MARK: - Outlets
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageTitle = "Discover"
+        title = "Discover"
         viewModel.delegate = self
         setupCollectionView()
         collectionView.collectionViewLayout = createLayout()
     }
     
+    // MARK: - Setup
     private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
     }
     
+    // MARK: - Compositional Layout
     private func createLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { sectionIndex, environment in
             
@@ -88,7 +93,8 @@ final class DiscoverViewController: BaseViewController {
         
 }
 
-extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+// MARK: - UICollectionViewDataSource
+extension DiscoverViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count
     }
@@ -101,7 +107,10 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
         cell.configure(with: category)
         return cell
     }
-    
+}
+
+// MARK: - UICollectionViewDelegate
+extension DiscoverViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let category = categories[indexPath.item]
         let vc = SelectedDiscoverViewBuilder.build(coordinator: self.coordinator, category: category.rawValue)
@@ -110,6 +119,7 @@ extension DiscoverViewController: UICollectionViewDelegate, UICollectionViewData
     }
 }
 
+// MARK: - DiscoverViewModelOutput
 extension DiscoverViewController: DiscoverViewModelOutput {
     func showError(message: String) {
         print("error: \(message)")

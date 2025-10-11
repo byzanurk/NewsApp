@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct SelectedDiscoverViewBuilder {
-    static func build(coordinator: Coordinator, category: String) -> UIViewController {
+    static func build(coordinator: CoordinatorProtocol, category: String) -> UIViewController {
         let service: NetworkRouterProtocol = NetworkRouter()
         let viewModel = SelectedDiscoverViewModel(service: service, category: category)
         let storyboard = UIStoryboard(name: "SelectedDiscoverViewController", bundle: nil)
@@ -22,3 +22,4 @@ struct SelectedDiscoverViewBuilder {
         return discoverVC
     }
 }
+

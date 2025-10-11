@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    func navigate(to vc: UIViewController, coordinator: Coordinator) {
+    func navigate(to vc: UIViewController, coordinator: CoordinatorProtocol) {
         coordinator.eventOccurred(with: vc)
     }
 }
+

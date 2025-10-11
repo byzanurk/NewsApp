@@ -9,11 +9,14 @@ import Foundation
 import UIKit
 
 struct HomeViewBuilder {
-    static func build(coordinator: Coordinator) -> UIViewController {
+    static func build(coordinator: CoordinatorProtocol) -> UIViewController {
         let service: NetworkRouterProtocol = NetworkRouter()
         let viewModel = HomeViewModel(service: service)
         let storyboard = UIStoryboard(name: "HomeViewController", bundle: nil)
-        guard let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else { return UIViewController() }
+        
+        guard let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else {
+            return UIViewController()
+        }
         
         homeVC.viewModel = viewModel
         homeVC.coordinator = coordinator

@@ -12,19 +12,24 @@ import UIKit
 final class Coordinator: CoordinatorProtocol {
     
     // MARK: Properties
-    var navigationController: UINavigationController?
-    var parentCoordinator: CoordinatorProtocol?
-    var children: [CoordinatorProtocol] = []
+    private(set) var tabBarController: UITabBarController?
+    weak var parentCoordinator: CoordinatorProtocol?
     
     // MARK: Functions
     func eventOccurred(with viewController: UIViewController) {
-        navigationController?.pushViewController(viewController, animated: true)
+        guard
+            let tabBar = tabBarController,
+            let nav = (tabBar.selectedViewController as? UINavigationController)
+        else { return }
+        
+        nav.pushViewController(viewController, animated: true)
     }
     
-    func start() {
+    @discardableResult
+    func start() -> UITabBarController {
         let tabBar = TabBarBuilder.build(coordinator: self)
-        navigationController?.setViewControllers([tabBar], animated: true)
+        self.tabBarController = tabBar
+        return tabBar
     }
-    
-    
 }
+

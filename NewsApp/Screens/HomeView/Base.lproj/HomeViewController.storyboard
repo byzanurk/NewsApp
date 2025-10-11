@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bjC-ML-EnQ">
-                                <rect key="frame" x="0.0" y="118" width="393" height="734"/>
+                                <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GqF-i3-vTx">
                                     <size key="itemSize" width="128" height="128"/>
@@ -31,10 +31,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bjC-ML-EnQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nvw-ph-sda"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bjC-ML-EnQ" secondAttribute="trailing" id="olo-Ex-qna"/>
-                            <constraint firstItem="bjC-ML-EnQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="p0o-mm-L1m"/>
-                            <constraint firstAttribute="bottom" secondItem="bjC-ML-EnQ" secondAttribute="bottom" id="ses-75-6DZ"/>
+                            <constraint firstItem="bjC-ML-EnQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SxM-s7-XHz"/>
+                            <constraint firstAttribute="bottom" secondItem="bjC-ML-EnQ" secondAttribute="bottom" id="ViZ-Kl-a2L"/>
+                            <constraint firstItem="bjC-ML-EnQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cel-Ag-7sk"/>
+                            <constraint firstItem="bjC-ML-EnQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="som-g1-MXE"/>
                         </constraints>
                     </view>
                     <connections>
@@ -43,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110.68702290076335" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="110.45454545454547" y="-34.518828451882847"/>
         </scene>
     </scenes>
     <resources>
