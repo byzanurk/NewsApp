@@ -3,16 +3,18 @@
 ## Screenshots
 
 ### 1. Home
-<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-05 at 21 00 44" src="https://github.com/user-attachments/assets/798c967d-c7cc-43c8-8ed4-a237ddad9329" />
-<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-05 at 21 01 17" src="https://github.com/user-attachments/assets/3ab081bb-5e34-4d10-8fca-67ebed8a825d" />
-<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-05 at 21 03 09" src="https://github.com/user-attachments/assets/fd771ae8-e060-431c-a9a7-abefd7502953" />
+<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-12 at 00 19 10" src="https://github.com/user-attachments/assets/e5033fdb-0c2e-4d6a-95fe-a0454134f174" />
+<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-12 at 00 22 59" src="https://github.com/user-attachments/assets/e11f4ecf-d874-492d-911d-91c155c2b606" />
+<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-12 at 00 21 02" src="https://github.com/user-attachments/assets/db21c022-17ac-4983-94c7-5721b951c1ab" />
+
 
 ### 2. Discover
-<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-05 at 21 00 09" src="https://github.com/user-attachments/assets/648c117b-6589-4b63-903f-07fd26287248" />
-<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-05 at 21 13 13" src="https://github.com/user-attachments/assets/1960636d-4440-4028-a1ff-2f71cfa29df1" />
-<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-05 at 21 52 57" src="https://github.com/user-attachments/assets/6b9f1f7e-b989-4cea-9d26-ea93d09a5c1a" />
+<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-12 at 00 24 15" src="https://github.com/user-attachments/assets/aecb55f9-66ec-44e1-ba06-8628b836b8b6" />
+<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-12 at 00 26 03" src="https://github.com/user-attachments/assets/5180b8dd-a81b-4737-8d45-d1b77524f3fe" />
+<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-12 at 00 27 05" src="https://github.com/user-attachments/assets/8200aff0-faad-4340-bef5-7ef9edb53d4f" />
+
 
 ### 3. Search
-<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-05 at 21 13 44" src="https://github.com/user-attachments/assets/9b8250c5-d517-48c0-8d08-014f01c62e89" />
-<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-05 at 22 40 31" src="https://github.com/user-attachments/assets/bfa9a36a-b22e-4276-9f04-3b874f9ef96f" />
-<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-05 at 21 15 56" src="https://github.com/user-attachments/assets/8a170082-ea87-4324-9953-4be2b7cc56fb" />
+<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-12 at 00 30 03" src="https://github.com/user-attachments/assets/45b68e5e-7f88-4d06-ba43-097ea351730b" />
+<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-12 at 00 31 35" src="https://github.com/user-attachments/assets/3cebf685-fc51-4959-bf86-b2f0abedf57f" />
+<img width="200" alt="Simulator Screenshot - iPhone 17 Pro Max - 2025-10-12 at 00 32 24" src="https://github.com/user-attachments/assets/a8cc1e85-b156-475d-a5f5-731c6acd0fb0" />
